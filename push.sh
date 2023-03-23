@@ -69,7 +69,7 @@ indent() { sed 's/^/  /'; }
 declare HELM3_VERSION="$(helm version --client --short | grep "v3\.")"
 
 declare REPO=$1
-declare REPO_URL="$(helm repo list | grep "^$REPO" | awk '{print $2}')/"
+declare REPO_URL="$(helm repo list | grep "^$REPO" | awk '{print $2}')"
 
 if [[ -n $HELM3_VERSION ]]; then
 declare REPO_AUTH_FILE="$HOME/.config/helm/auth.$REPO"
@@ -132,7 +132,7 @@ case "$2" in
         fi
 
         echo "Pushing $CHART to repo $REPO_URL..."
-        curl -is -u "$AUTH" "$REPO_URL" --upload-file "$CHART_PACKAGE" | indent
+        curl -is -X POST -u "$AUTH" "$REPO_URL" --upload-file "$CHART_PACKAGE" | indent
         echo "Done"
         ;;
 esac
