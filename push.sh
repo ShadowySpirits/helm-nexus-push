@@ -72,6 +72,7 @@ declare REPO=$1
 declare REPO_URL="$(helm repo list | grep "^$REPO" | awk '{print $2}')"
 
 if [[ -n $HELM3_VERSION ]]; then
+mkdir -p $HOME/.config/helm
 declare REPO_AUTH_FILE="$HOME/.config/helm/auth.$REPO"
 else
 declare REPO_AUTH_FILE="$(helm home)/repository/auth.$REPO"
