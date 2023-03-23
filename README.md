@@ -22,18 +22,18 @@ Nexus Helm repo.
 
 ## Installation
 
-  * `helm plugin install --version master https://github.com/ShadowySpirits/helm-push.git`
-  * `helm push --help`
+  * `helm plugin install --version master https://github.com/ShadowySpirits/helm-nexus-push.git`
+  * `helm nexus-push --help`
 
 ## Updates
 
-  * `cd $HELM_HOME/plugins/push`
+  * `cd $HELM_HOME/plugins/nexus-push`
   * `git pull`
 
 ## Usage
 
-  * `helm pu'sh myrepo mychart-0.0.1.tgz`
-  * `helm push myrepo ./mychart`
+  * `helm nexus-push myrepo mychart-0.0.1.tgz`
+  * `helm nexus-push myrepo ./mychart`
 
 Additional help available `helm push --help`
 

@@ -1,4 +1,4 @@
-name: "push"
+name: "nexus-push"
 version: "0.0.1"
 usage: "Push chart or packaged chart to a specified repo"
 description: |-
